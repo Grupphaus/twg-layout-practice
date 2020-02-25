@@ -25,17 +25,14 @@
     margin: 0;
     height: 100%;
     color: #757575;
+    font-size: 1.125rem;
     font-family: Roboto, sans-serif;
     letter-spacing: .00688rem;
     line-height: 1.75rem;
   }
 
   .modal-active {
-
-  }
-
-  .modal-active--slide {
-
+    overflow: hidden;
   }
   
   /**
@@ -365,6 +362,7 @@
   }
 
   .modal {
+    opacity: 0;
     display: none;
     height: 100%;
     position: absolute;
@@ -372,6 +370,22 @@
     right: 0;
     bottom: 0;
     left: 0;
+    transition: all 200ms linear;
+    z-index: 5;
+  }
+
+  .modal__menu {
+    height: 100%;
+    width: 16.25rem;
+    position: relative;
+    z-index: 6;
+    background-color: #fff;
+    transform: translateX(-16.25rem);
+    transition: all 150ms cubic-bezier(0.0, 0.0, 0.2, 1);
+  }
+
+  .no-translate {
+      transform: translateX(0);
   }
 
   .modal__backdrop {
@@ -411,7 +425,7 @@
   }
 
   .global-header__select-container, .global-header__search-trigger {
-    margin-right: 1.5rem;
+    margin-right: 1.125rem;
     color: #424242;
   }
 
@@ -421,11 +435,11 @@
     align-items: center;
   }
 
-  .global-header__select-container span {
+  .global-header__select-container span i.fa-angle-down {
     position: relative;
-    right: 0;
     right: 16px;
     z-index: -1;
+    color: #5f6368;
   }
 
   .locale-select {
@@ -433,7 +447,7 @@
     cursor: pointer;
     height: 1.25rem;
     color: #5f6368;
-    font-size: .875rem;
+    font-size: .825rem;
     background-color: transparent;
     font-family: 'Open Sans', sans-serif;
     border: 0;
@@ -492,7 +506,10 @@
 
   .global-header__logo {
       flex-shrink: 0;
-      display: flex;
+  }
+
+  .global-header__logo a {
+    display: flex;
   }
 
   .twg-logo {
@@ -512,6 +529,54 @@
       margin-left: 2rem;
       padding: .75rem 0;
       flex-shrink: 0;
+      font-family: 'Open Sans', sans-serif;
+      font-size: .85rem;
+      font-weight: 500;
+  }
+
+  .global-nav__section a {
+    outline: none;
+    text-decoration: none;
+    color: #5f6368;
+  }
+
+  .global-nav__section a:hover {
+    color: #212121;
+  }
+
+  .global-nav__section i {
+    color: #424242;
+    font-size: .875rem;
+    font-weight: 600;
+    margin-left: .5rem;
+    transition: all 150ms linear;
+  }
+
+  .global-nav__section:hover .global-nav__dropdown {
+    display: block;
+    border: .0625rem solid#e0e0e0;
+    height: auto;
+    max-height: 31.25rem;
+    padding: .875rem 1.1875rem;
+  }
+
+  .global-nav__section:hover i {
+    transform: rotate(180deg);
+  }
+
+  .global-nav__dropdown {  
+    display: none;
+    position: absolute;
+    background: #fff;
+    border-radius: .5rem;
+    max-width: 17.5rem;
+    min-width: 15rem;
+    position: absolute;
+    top: 2.75rem;
+    transition: none;
+  }
+
+  .rotate {
   }
 
   @media screen and (max-width: 600px) {
@@ -531,6 +596,10 @@
   }
   
   @media screen and (max-width: 1095px) {
+
+  }
+
+  @media screen and (max-width: 1250px) {
     .global-nav {
         display: none;
     }
@@ -538,8 +607,4 @@
     .global-header__trigger {
         display: flex;
     }
-  }
-
-  @media screen and (max-width: 1250px) {
-
   }
