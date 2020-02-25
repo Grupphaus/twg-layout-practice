@@ -1,0 +1,1 @@
+this.addEventListener('load', () => { console.log('0000') })
