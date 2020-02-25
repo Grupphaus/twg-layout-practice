@@ -549,7 +549,7 @@
     font-size: .875rem;
     font-weight: 600;
     margin-left: .5rem;
-    transition: all 150ms linear;
+    transition: all 100ms linear;
   }
 
   .global-nav__section:hover .global-nav__dropdown {
