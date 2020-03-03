@@ -5,6 +5,7 @@ this.addEventListener('load', () => {
     const MODAL = document.getElementById('modal');
     const MODAL_MENU = document.getElementById('modal-menu');
     const MODAL_BACKDROP = document.getElementById('modal-backdrop');
+    const MODAL_NAV_DROPDOWN_TRIGGER = document.querySelectorAll('.modal-nav__section');
 
     MODAL_TRIGGER.addEventListener('click', () => {
         MODAL.style.display = 'block';
@@ -24,5 +25,12 @@ this.addEventListener('load', () => {
             MODAL_MENU.style.opacity = '0';
             MODAL.style.display = 'none';
         }, 150);
-    })
+    });
+
+    MODAL_NAV_DROPDOWN_TRIGGER.forEach(element => {
+        element.addEventListener('click', event => {
+            element.nextElementSibling.classList.toggle('uncollapsed');
+            element.lastChild.classList.toggle('active-dropdown');
+        });
+    });
 })
