@@ -481,10 +481,6 @@ template {
     flex-grow: 0;
 }
 
-.modal-nav__section > p, .modal-nav__section > p a {
-    width: 100%;
-}
-
 .modal-nav__section span p:hover, .modal-nav__section p:hover a, .modal-nav__section p:hover {
     background-color: #eee;
     color: #212121;
