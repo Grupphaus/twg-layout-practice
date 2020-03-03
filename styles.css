@@ -461,7 +461,6 @@ template {
 
 .divider-line {
     width: calc(100% - 2rem);
-    height: 10px;
     margin-bottom: .625rem;
     padding-bottom: .625rem;
     border-bottom: .0625rem solid #e0e0e0;
